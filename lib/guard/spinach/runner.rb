@@ -1,0 +1,19 @@
+module Guard
+  class Spinach
+    class Runner
+      attr_reader :paths
+
+      def initialize(paths)
+        @paths = paths
+      end
+
+      def run
+        system(run_command)
+      end
+
+      def run_command
+        "spinach #{paths.join(" ")}"
+      end
+    end
+  end
+end

@@ -7,11 +7,12 @@ require 'minitest/autorun'
 
 require_relative '../lib/guard/spinach'
 
-def capture_stdout
+def capture_output
   output = StringIO.new
   $stdout = output
   $stderr = output
   yield
+  return output.string
 ensure
   $stdout = STDOUT
   $stdout = STDERR

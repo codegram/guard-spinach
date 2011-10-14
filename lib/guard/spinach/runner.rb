@@ -8,6 +8,7 @@ module Guard
       end
 
       def run
+        puts "Running #{paths.join(" ")}\n"
         system(run_command)
       end
 

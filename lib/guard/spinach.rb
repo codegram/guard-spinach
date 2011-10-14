@@ -10,5 +10,4 @@ module Guard
 end
 
 require_relative "spinach/runner"
-
 require_relative "spinach/version"

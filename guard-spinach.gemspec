@@ -4,11 +4,12 @@ require File.expand_path('../lib/guard/spinach/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Josep Jaume"]
   gem.email         = ["josepjaume@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ''
+  gem.description   = %q{guard-spinach is a guard plugin for spinach}
+  gem.summary       = %q{guard-spinach is a guard plugin for spinach}
+  gem.homepage      = 'http://github.com/codegram/guard-spinach'
 
   gem.add_runtime_dependency 'guard'
+  gem.add_runtime_dependency 'spinach'
   gem.add_development_dependency 'mocha'
   gem.add_development_dependency 'minitest'
 

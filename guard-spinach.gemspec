@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{guard-spinach is a guard plugin for spinach}
   gem.homepage      = 'http://github.com/codegram/guard-spinach'
 
-  gem.add_runtime_dependency 'guard'
+  gem.add_runtime_dependency 'guard', '>= 1.1'
   gem.add_runtime_dependency 'spinach'
   gem.add_development_dependency 'mocha'
   gem.add_development_dependency 'minitest'

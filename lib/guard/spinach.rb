@@ -3,7 +3,7 @@ require 'guard/guard'
 
 module Guard
   class Spinach < Guard
-    def run_on_change(paths)
+    def run_on_changes(paths)
       Runner.new(paths).run
     end
   end

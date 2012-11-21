@@ -18,13 +18,17 @@ module Guard
       end
 
       def notify(passed)
-        opts = { :title => "Spinach results", :priority => 2 }
+        opts = {title: 'Spinach results', priority: 2}
 
         if passed
-          Notifier.notify("Passed", opts.merge(:image => :success))
+          status = 'Passed'
+          image = :success
         else
-          Notifier.notify("Failed", opts.merge(:image => :failed))
+          status = 'Failed'
+          image = :failed
         end
+
+        Notifier.notify(status, opts.merge(image: image))
       end
     end
   end

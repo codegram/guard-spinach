@@ -1,9 +1,9 @@
 require 'bundler/setup'
 Bundler.require :default, :test
 
-require 'mocha'
 require 'minitest/spec'
 require 'minitest/autorun'
+require 'mocha/setup'
 
 require_relative '../lib/guard/spinach'
 

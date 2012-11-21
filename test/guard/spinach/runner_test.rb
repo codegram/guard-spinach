@@ -30,5 +30,15 @@ describe Guard::Spinach::Runner do
       output.must_include paths[0]
       output.must_include paths[1]
     end
+    it "notifies of success" do
+      subject.stubs(:system).returns(`(exit 0)`)
+      Guard::Notifier.expects(:notify).with("Passed", :title => "Spinach results", :image => :success, :priority => 2)
+      subject.run
+    end
+    it "notifier of failures" do
+      subject.stubs(:system).returns(`(exit 1)`)
+      Guard::Notifier.expects(:notify).with("Failed", :title => "Spinach results", :image => :failed, :priority => 2)
+      subject.run
+    end
   end
 end

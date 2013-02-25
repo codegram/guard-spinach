@@ -1,14 +1,11 @@
 module Guard
   class Spinach
     class Runner
-      attr_reader :paths
+      attr_reader :paths, :options
 
-      def initialize(paths, opts=nil)
+      def initialize(paths, opts = nil)
         @paths = paths
-        if opts
-          @generate = true if opts[:generate]
-          @command_prefix = opts[:command_prefix] if opts[:command_prefix]
-        end
+        @options = opts || {}
       end
 
       def run
@@ -18,7 +15,12 @@ module Guard
       end
 
       def run_command
-        "#{@command_prefix} spinach #{paths.join(" ")}#{' -g' if @generate}"
+        cmd = []
+        cmd << @options[:command_prefix] if @options[:command_prefix]
+        cmd << 'spinach'
+        cmd << paths.join(" ")
+        cmd << '-g' if @options[:generate]
+        cmd.join(" ")
       end
 
       def notify(passed)

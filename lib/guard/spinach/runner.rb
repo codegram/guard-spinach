@@ -7,6 +7,7 @@ module Guard
         @paths = paths
         if opts
           @generate = true if opts[:generate]
+          @command_prefix = opts[:command_prefix] if opts[:command_prefix]
         end
       end
 
@@ -17,7 +18,7 @@ module Guard
       end
 
       def run_command
-        "spinach #{paths.join(" ")}#{' -g' if @generate}"
+        "#{@command_prefix} spinach #{paths.join(" ")}#{' -g' if @generate}"
       end
 
       def notify(passed)

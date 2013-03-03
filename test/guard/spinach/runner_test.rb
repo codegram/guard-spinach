@@ -1,8 +1,9 @@
 require_relative '../../test_helper'
 
 describe Guard::Spinach::Runner do
-  let(:runner) { Guard::Spinach::Runner.new(paths) }
+  let(:runner) { Guard::Spinach::Runner.new(paths, options) }
   let(:paths) { ['fake/path.feature', 'foo/bar.feature'] }
+  let(:options) { nil }
 
   describe '#initialize' do
     it 'sets up a bunch of file paths' do
@@ -14,6 +15,20 @@ describe Guard::Spinach::Runner do
   describe '#run_command' do
     it 'generates a valid run command' do
       runner.run_command.must_equal 'spinach fake/path.feature foo/bar.feature'
+    end
+
+    describe 'when :command_prefix option is given' do
+      let (:options) { { :command_prefix => 'zeus' } }
+      it 'generates a run command with prefix' do
+        runner.run_command.must_equal 'zeus spinach fake/path.feature foo/bar.feature'
+      end
+    end
+
+    describe 'when :generate option is given' do
+      let (:options) { { :generate => true } }
+      it 'generates a run command with -g flag' do
+        runner.run_command.must_equal 'spinach fake/path.feature foo/bar.feature -g'
+      end
     end
   end
 

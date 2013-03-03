@@ -1,20 +1,26 @@
 module Guard
   class Spinach
     class Runner
-      attr_reader :paths
+      attr_reader :paths, :options
 
-      def initialize(paths)
+      def initialize(paths, opts = nil)
         @paths = paths
+        @options = opts || {}
       end
 
       def run
-        puts "Running #{paths.join(" ")}\n"
+        puts "Running #{paths.empty? ? "all Spinach features" : paths.join(" ")}"
         system(run_command)
         notify($? == 0)
       end
 
       def run_command
-        "spinach #{paths.join(" ")}"
+        cmd = []
+        cmd << @options[:command_prefix] if @options[:command_prefix]
+        cmd << 'spinach'
+        cmd << paths.join(" ")
+        cmd << '-g' if @options[:generate]
+        cmd.join(" ")
       end
 
       def notify(passed)

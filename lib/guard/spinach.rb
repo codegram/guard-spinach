@@ -3,8 +3,16 @@ require 'guard/guard'
 
 module Guard
   class Spinach < Guard
-    def run_on_changes(paths)
-      Runner.new(paths).run
+    def start
+      run_all if @options[:all_on_start]
+    end
+
+    def run_all
+      Runner.new([], @options).run
+    end
+
+    def run_on_change(paths)
+      Runner.new(paths, @options).run
     end
   end
 end

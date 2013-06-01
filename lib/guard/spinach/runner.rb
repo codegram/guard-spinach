@@ -20,6 +20,8 @@ module Guard
         cmd << 'spinach'
         cmd << paths.join(" ")
         cmd << '-g' if @options[:generate]
+        cmd << "-t #{@options[:tags].join(',')}" if @options[:tags] && @options[:tags].any?
+        cmd << '-b' if @options[:backtrace]
         cmd.join(" ")
       end
 

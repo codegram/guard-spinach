@@ -29,3 +29,7 @@ guard 'spinach', command_prefix: 'zeus', all_on_start: true, generate: true, bac
   end
 end
 ```
+
+## License
+
+MIT (Expat) License. Copyright 2011 [Codegram Technologies](http://codegram.com)

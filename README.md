@@ -13,7 +13,7 @@
   <dd>Boolean. Show backtrace</dd>
 
   <dt>tags</dt>
-  <dd>Array. Run scenarion mark with tags</dd>
+  <dd>Array. Run scenarios marked with tags</dd>
 
   <dt>command_prefix</dt>
   <dd>String. Allows you to inject something before the `spinach` command. E.g. `zeus spinach`.</dd>

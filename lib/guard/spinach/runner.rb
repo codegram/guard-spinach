@@ -17,7 +17,11 @@ module Guard
       def run_command
         cmd = []
         cmd << @options[:command_prefix] if @options[:command_prefix]
-        cmd << 'spinach'
+        if @options[:binstubs]
+          cmd << 'bin/spinach'
+        else
+          cmd << 'spinach'
+        end
         cmd << paths.join(" ")
         cmd << '-g' if @options[:generate]
         cmd << "-t #{@options[:tags].join(',')}" if @options[:tags] && @options[:tags].any?

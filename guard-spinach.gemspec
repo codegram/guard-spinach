@@ -10,6 +10,7 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency 'guard', '>= 1.1'
   gem.add_runtime_dependency 'spinach'
+  gem.add_development_dependency 'rake'
   gem.add_development_dependency 'mocha'
   gem.add_development_dependency 'minitest'
 

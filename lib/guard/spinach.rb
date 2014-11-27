@@ -1,8 +1,8 @@
 require 'guard'
-require 'guard/guard'
+require 'guard/plugin'
 
 module Guard
-  class Spinach < Guard
+  class Spinach < Plugin
     def start
       run_all if @options[:all_on_start]
     end

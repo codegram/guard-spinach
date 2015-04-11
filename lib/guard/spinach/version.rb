@@ -1,3 +1,3 @@
 module Guard
-  SPINACH_VERSION = "0.0.3"
+  SPINACH_VERSION = "0.0.4"
 end

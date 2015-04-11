@@ -8,11 +8,10 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{guard-spinach is a guard plugin for spinach}
   gem.homepage      = 'http://github.com/codegram/guard-spinach'
 
-  gem.add_runtime_dependency 'guard', '>= 1.1'
+  gem.add_runtime_dependency 'guard', '~> 2.0'
   gem.add_runtime_dependency 'spinach'
   gem.add_development_dependency 'rake'
-  gem.add_development_dependency 'mocha'
-  gem.add_development_dependency 'minitest'
+  gem.add_development_dependency 'rspec'
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")

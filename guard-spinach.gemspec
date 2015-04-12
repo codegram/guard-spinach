@@ -9,6 +9,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = 'http://github.com/codegram/guard-spinach'
 
   gem.add_runtime_dependency 'guard', '~> 2.0'
+  gem.add_dependency('guard-compat', '~> 1.0')
   gem.add_runtime_dependency 'spinach'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rspec'

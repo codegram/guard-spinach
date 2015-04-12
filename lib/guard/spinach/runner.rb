@@ -40,7 +40,7 @@ module Guard
           image = :failed
         end
 
-        Notifier.notify(status, opts.merge(image: image))
+        Guard::Compat::UI.notify(status, opts.merge(image: image))
       end
     end
   end

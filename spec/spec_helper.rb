@@ -2,6 +2,7 @@ require 'bundler/setup'
 Bundler.require :default, :test
 
 require 'rspec'
+require 'guard/compat/test/helper'
 require_relative '../lib/guard/spinach'
 
 RSpec.configure do |config|

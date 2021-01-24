@@ -17,6 +17,9 @@
 
   <dt>command_prefix</dt>
   <dd>String. Allows you to inject something before the `spinach` command. E.g. `zeus spinach`.</dd>
+  
+  <dt>binstubs</dt>
+  <dd>Boolean. Run command from your `bin` direcotry (`bin/spinach`). This may be useful when working with something like [Spring](https://github.com/rails/spring).</dd>
 </dl>
 
 ### Example Guardfile snippet
